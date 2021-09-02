@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 01:24:19 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/31 20:43:53 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/09/02 13:29:29 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_server
 typedef enum e_error
 {
 	ERR_ARGS_NUM,
+	ERR_ARGS_STR,
 	ERR_PID,
 	ERR_SERVER
 }				t_error;

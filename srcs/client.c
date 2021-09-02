@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 01:00:19 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/31 19:56:13 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/09/02 14:02:55 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,10 @@ static void	args_check(int argc, char *argv[])
 {
 	if (argc != 3)
 		panic(ERR_ARGS_NUM);
-	if (ft_atoi(argv[1]) <= 0)
+	if (argv[1] == NULL || ft_atoi(argv[1]) <= 0)
 		panic(ERR_PID);
+	if (argv[2] == NULL || argv[2][0] == '\0')
+		panic(ERR_ARGS_STR);
 	if (kill(ft_atoi(argv[1]), 0) != 0)
 		panic(ERR_SERVER);
 }
@@ -74,9 +76,6 @@ int	main(int argc, char *argv[])
 		}
 		i++;
 	}
-	if (argv[2][0] != '\0')
-		ft_putstr_fd("Data sent...\n", 1);
-	else
-		ft_putstr_fd("Nothing to send...\n", 1);
+	ft_putstr_fd("Data sent...\n", 1);
 	return (0);
 }

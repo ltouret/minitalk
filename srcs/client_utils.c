@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 19:16:14 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/31 19:57:44 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/09/02 13:58:04 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ void	panic(t_error err)
 		ft_putstr_fd("Error:\nArguments must be PID then string\n", 2);
 	if (err == ERR_PID)
 		ft_putstr_fd("Error:\nIncorrect PID format\n", 2);
+	if (err == ERR_ARGS_STR)
+		ft_putstr_fd("Error:\nSending empty string\n", 2);
 	if (err == ERR_SERVER)
-		ft_putstr_fd("Error\nServer not online\n", 2);
+		ft_putstr_fd("Error:\nServer not online\n", 2);
 	exit(err);
 }
